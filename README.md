@@ -28,3 +28,6 @@ I set up my alert so it appers when you tap the login button. However, I don't k
 My assumption is...the alert is a else if statement? If the text fields are not populated with @"blank@gmail.com" then the alert appears.
 I tried doing that but it screwed up the code completely so I'm not sure if there's another way of doing it.
 
+
+https://raw.githubusercontent.com/diannasu/FBLogin/master/FBLoginV1.gif
+https://raw.githubusercontent.com/diannasu/FBLogin/master/FBLoginV1b.gif
