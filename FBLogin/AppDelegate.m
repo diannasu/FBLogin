@@ -20,8 +20,8 @@
     //self.window.rootViewController = [[MainViewController alloc] init];
 
     // Create the two view controllers, each within a navigation controller
-    //MainViewController *mainVC = [[MainViewController alloc] init];
-    //UINavigationController *mainNC = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    UINavigationController *mainNC = [[UINavigationController alloc] initWithRootViewController:mainVC];
     
     
     FeedViewController *feedViewController = [[FeedViewController alloc] init];
@@ -32,7 +32,7 @@
     
     // Configure the tab bar controller with the two navigation controllers
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[feedNavigationController];
+    tabBarController.viewControllers = @[mainNC, feedNavigationController];
 
     
     self.window.rootViewController = tabBarController;
