@@ -66,18 +66,12 @@
                           delay:0.0
                         options:(animationCurve << 16)
                      animations:^{
-                         self.containerView.frame = CGRectMake(0, 550 - kbSize.height - self.containerView.frame.size.height, self.containerView.frame.size.width, self.containerView.frame.size.height);
+                         //self.containerView.frame = CGRectMake(0, 550 - kbSize.height - self.containerView.frame.size.height, self.containerView.frame.size.width, self.containerView.frame.size.height);
+                         self.containerView.center = CGPointMake(self.containerView.center.x, self.containerView.center.y -60);
+                         self.signUpLabel.center = CGPointMake(self.signUpLabel.center.x, self.signUpLabel.center.y -150);
                      }
                      completion:nil];
     
-    // Move the view with the same duration and animation curve so that it will match with the keyboard animation
-    [UIView animateWithDuration:animationDuration
-                          delay:0.0
-                        options:(animationCurve << 16)
-                     animations:^{
-                         self.signUpLabel.frame = CGRectMake(0, 550 - kbSize.height - self.signUpLabel.frame.size.height, self.signUpLabel.frame.size.width, self.containerView.frame.size.height);
-                     }
-                     completion:nil];
     
 }
 
@@ -95,7 +89,8 @@
                           delay:0.0
                         options:(animationCurve << 16)
                      animations:^{
-                         self.containerView.frame = CGRectMake(0, self.containerView.frame.size.height - self.containerView.frame.size.height, self.containerView.frame.size.width, self.containerView.frame.size.height);
+                         self.containerView.center = CGPointMake(self.containerView.center.x, self.containerView.center.y +60);
+                         self.signUpLabel.center = CGPointMake(self.signUpLabel.center.x, self.signUpLabel.center.y +150);
                      }
                      completion:nil];
 }

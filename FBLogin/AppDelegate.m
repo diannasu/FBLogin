@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "FeedViewController.h"
+#import "RequestViewController.h"
+#import "MessageViewController.h"
+#import "NotificationViewController.h"
+#import "MoreViewController.h"
 
 
 @implementation AppDelegate
@@ -17,25 +21,37 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //self.window.rootViewController = [[MainViewController alloc] init];
-
-    // Create the two view controllers, each within a navigation controller
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    UINavigationController *mainNC = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    
-    
-    FeedViewController *feedViewController = [[FeedViewController alloc] init];
-    UINavigationController *feedNavigationController = [[UINavigationController alloc] initWithRootViewController:feedViewController];
+    self.window.rootViewController = [[MainViewController alloc] init];
     
 
+    // View Controllers
+    FeedViewController *feedVC = [[FeedViewController alloc] init];
+    UINavigationController *feedNC = [[UINavigationController alloc] initWithRootViewController:feedVC];
+    feedNC.tabBarItem.title = @"News Feed";
+    //firstNavigationController.tabBarItem.image = [UIImage imageNamed:@"House"];
     
+    RequestViewController *requestVC = [[RequestViewController alloc] init];
+    UINavigationController *requestNC = [[UINavigationController alloc] initWithRootViewController:requestVC];
+    requestNC.tabBarItem.title = @"Requests";
+   
+    MessageViewController *messageVC = [[MessageViewController alloc] init];
+    UINavigationController *messageNC = [[UINavigationController alloc] initWithRootViewController:messageVC];
+    messageNC.tabBarItem.title = @"Messages";
+    
+    NotificationViewController *notificationVC = [[NotificationViewController alloc] init];
+    UINavigationController *notificationNC = [[UINavigationController alloc] initWithRootViewController:notificationVC];
+    notificationNC.tabBarItem.title = @"Ntifications";
+    
+    MoreViewController *moreVC = [[MoreViewController alloc] init];
+    UINavigationController *moreNC = [[UINavigationController alloc] initWithRootViewController:moreVC];
+    moreNC.tabBarItem.title = @"More";
     
     // Configure the tab bar controller with the two navigation controllers
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[mainNC, feedNavigationController];
-
+    tabBarController.viewControllers = @[feedNC, requestNC, messageNC, notificationNC, moreNC];
     
     self.window.rootViewController = tabBarController;
+
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

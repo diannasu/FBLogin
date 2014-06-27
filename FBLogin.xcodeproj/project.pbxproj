@@ -23,6 +23,14 @@
 		D0613D421957C464008EFF37 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0613D401957C464008EFF37 /* MainViewController.xib */; };
 		D090ACDF195A78FB00B8B899 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D090ACDD195A78FB00B8B899 /* FeedViewController.m */; };
 		D090ACE0195A78FB00B8B899 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D090ACDE195A78FB00B8B899 /* FeedViewController.xib */; };
+		D0E7865B195DCB6700F5D1FC /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E78659195DCB6700F5D1FC /* RequestViewController.m */; };
+		D0E7865C195DCB6700F5D1FC /* RequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E7865A195DCB6700F5D1FC /* RequestViewController.xib */; };
+		D0E78660195DCB7A00F5D1FC /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E7865E195DCB7A00F5D1FC /* MessageViewController.m */; };
+		D0E78661195DCB7A00F5D1FC /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E7865F195DCB7A00F5D1FC /* MessageViewController.xib */; };
+		D0E78668195DCBB400F5D1FC /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E78666195DCBB400F5D1FC /* NotificationViewController.m */; };
+		D0E78669195DCBB400F5D1FC /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E78667195DCBB400F5D1FC /* NotificationViewController.xib */; };
+		D0E7866D195DCBDC00F5D1FC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E7866B195DCBDC00F5D1FC /* MoreViewController.m */; };
+		D0E7866E195DCBDC00F5D1FC /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E7866C195DCBDC00F5D1FC /* MoreViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +66,18 @@
 		D090ACDC195A78FB00B8B899 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		D090ACDD195A78FB00B8B899 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		D090ACDE195A78FB00B8B899 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		D0E78658195DCB6700F5D1FC /* RequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestViewController.h; sourceTree = "<group>"; };
+		D0E78659195DCB6700F5D1FC /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
+		D0E7865A195DCB6700F5D1FC /* RequestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestViewController.xib; sourceTree = "<group>"; };
+		D0E7865D195DCB7A00F5D1FC /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		D0E7865E195DCB7A00F5D1FC /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		D0E7865F195DCB7A00F5D1FC /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		D0E78665195DCBB400F5D1FC /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		D0E78666195DCBB400F5D1FC /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		D0E78667195DCBB400F5D1FC /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		D0E7866A195DCBDC00F5D1FC /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		D0E7866B195DCBDC00F5D1FC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		D0E7866C195DCBDC00F5D1FC /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +147,18 @@
 				D090ACDC195A78FB00B8B899 /* FeedViewController.h */,
 				D090ACDD195A78FB00B8B899 /* FeedViewController.m */,
 				D090ACDE195A78FB00B8B899 /* FeedViewController.xib */,
+				D0E78658195DCB6700F5D1FC /* RequestViewController.h */,
+				D0E78659195DCB6700F5D1FC /* RequestViewController.m */,
+				D0E7865A195DCB6700F5D1FC /* RequestViewController.xib */,
+				D0E7865D195DCB7A00F5D1FC /* MessageViewController.h */,
+				D0E7865E195DCB7A00F5D1FC /* MessageViewController.m */,
+				D0E7865F195DCB7A00F5D1FC /* MessageViewController.xib */,
+				D0E78665195DCBB400F5D1FC /* NotificationViewController.h */,
+				D0E78666195DCBB400F5D1FC /* NotificationViewController.m */,
+				D0E78667195DCBB400F5D1FC /* NotificationViewController.xib */,
+				D0E7866A195DCBDC00F5D1FC /* MoreViewController.h */,
+				D0E7866B195DCBDC00F5D1FC /* MoreViewController.m */,
+				D0E7866C195DCBDC00F5D1FC /* MoreViewController.xib */,
 			);
 			path = FBLogin;
 			sourceTree = "<group>";
@@ -236,9 +268,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0613D1A1957C3B9008EFF37 /* InfoPlist.strings in Resources */,
+				D0E7866E195DCBDC00F5D1FC /* MoreViewController.xib in Resources */,
 				D0613D421957C464008EFF37 /* MainViewController.xib in Resources */,
+				D0E78661195DCB7A00F5D1FC /* MessageViewController.xib in Resources */,
 				D090ACE0195A78FB00B8B899 /* FeedViewController.xib in Resources */,
 				D0613D221957C3B9008EFF37 /* Images.xcassets in Resources */,
+				D0E7865C195DCB6700F5D1FC /* RequestViewController.xib in Resources */,
+				D0E78669195DCBB400F5D1FC /* NotificationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E78668195DCBB400F5D1FC /* NotificationViewController.m in Sources */,
+				D0E7866D195DCBDC00F5D1FC /* MoreViewController.m in Sources */,
+				D0E78660195DCB7A00F5D1FC /* MessageViewController.m in Sources */,
+				D0E7865B195DCB6700F5D1FC /* RequestViewController.m in Sources */,
 				D0613D201957C3B9008EFF37 /* AppDelegate.m in Sources */,
 				D0613D411957C464008EFF37 /* MainViewController.m in Sources */,
 				D090ACDF195A78FB00B8B899 /* FeedViewController.m in Sources */,
