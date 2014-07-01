@@ -8,6 +8,8 @@
             <connections>
                 <outlet property="containerView" destination="bmj-RT-25E" id="uAm-3J-bg3"/>
                 <outlet property="emailTextField" destination="xix-uL-6ng" id="X8L-cN-Gua"/>
+                <outlet property="loginActivityIndicator" destination="3EV-ks-gt6" id="4kc-ED-wc3"/>
+                <outlet property="loginButton" destination="p80-Sm-n5f" id="dfy-oG-iHt"/>
                 <outlet property="passwordTextField" destination="7Ls-gu-gc8" id="DUJ-6d-biO"/>
                 <outlet property="signUpLabel" destination="8Xc-Ot-pHv" id="PhY-xD-mBl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,6 +28,28 @@
                             <rect key="frame" x="42" y="-12" width="240" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ua-Bh-LdW">
+                            <rect key="frame" x="0.0" y="182" width="322" height="63"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p80-Sm-n5f">
+                                    <rect key="frame" x="16" y="6" width="293" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="Login" backgroundImage="Login">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" image="login_button_pre" backgroundImage="login_button_pre"/>
+                                    <connections>
+                                        <action selector="onTouchUp:" destination="-1" eventType="touchUpInside" id="Lar-Ux-GN4"/>
+                                    </connections>
+                                </button>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="3EV-ks-gt6">
+                                    <rect key="frame" x="270" y="22" width="20" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bP0-Em-3lp" userLabel="textFieldView">
                             <rect key="frame" x="2" y="68" width="320" height="142"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -57,17 +81,6 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p80-Sm-n5f">
-                            <rect key="frame" x="16" y="187" width="293" height="52"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="Login" backgroundImage="Login">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="disabled" image="LoggingIn" backgroundImage="LoggingIn"/>
-                            <connections>
-                                <action selector="onTouchUp:" destination="-1" eventType="touchUpInside" id="Lar-Ux-GN4"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -108,9 +121,9 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="LoggingIn" width="293" height="52"/>
         <image name="Login" width="293" height="52"/>
         <image name="form_bg" width="295" height="95"/>
+        <image name="login_button_pre" width="293" height="52"/>
         <image name="logo" width="174" height="43"/>
     </resources>
 </document>

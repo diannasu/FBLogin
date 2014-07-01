@@ -9,6 +9,7 @@
 #import "NotificationViewController.h"
 
 @interface NotificationViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *notificationViewScroll;
 
 @end
 
@@ -19,6 +20,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        self.title = @"Notifications";
+        
+        
     }
     return self;
 }
@@ -27,6 +32,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.notificationViewScroll.contentSize = CGSizeMake(320, 1025);
+    
 }
 
 - (void)didReceiveMemoryWarning

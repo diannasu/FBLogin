@@ -9,6 +9,7 @@
 #import "RequestViewController.h"
 
 @interface RequestViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *requestScrollView;
 
 @end
 
@@ -19,6 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        self.title = @"Requests";
     }
     return self;
 }
@@ -27,6 +30,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.requestScrollView.contentSize = CGSizeMake(320, 1025);
 }
 
 - (void)didReceiveMemoryWarning

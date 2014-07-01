@@ -10,6 +10,9 @@
 
 
 @interface FeedViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *feedScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *feedView;
+
 
 @end
 
@@ -30,6 +33,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.feedScrollView.contentSize = CGSizeMake(320, 1025);
+    
 }
 
 - (void)didReceiveMemoryWarning

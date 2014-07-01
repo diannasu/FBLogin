@@ -9,6 +9,7 @@
 #import "MoreViewController.h"
 
 @interface MoreViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *moreScrollView;
 
 @end
 
@@ -19,6 +20,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        self.title = @"More";
+        
+        
     }
     return self;
 }
@@ -27,6 +32,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.moreScrollView.contentSize = CGSizeMake(320, 1025);
 }
 
 - (void)didReceiveMemoryWarning

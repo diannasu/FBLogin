@@ -8,14 +8,20 @@
 
 #import "MainViewController.h"
 #import "FeedViewController.h"
+#import "RequestViewController.h"
+#import "MessageViewController.h"
+#import "NotificationViewController.h"
+#import "MoreViewController.h"
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UILabel *signUpLabel;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 //Login button
 - (IBAction)onTouchUp:(id)sender;
 - (IBAction)onTap:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loginActivityIndicator;
 
 //Text fields
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -30,9 +36,12 @@
 - (void)willShowKeyboard:(NSNotification *)notification;
 - (void)willHideKeyboard:(NSNotification *)notification;
 
+
 @end
 
 @implementation MainViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,7 +75,6 @@
                           delay:0.0
                         options:(animationCurve << 16)
                      animations:^{
-                         //self.containerView.frame = CGRectMake(0, 550 - kbSize.height - self.containerView.frame.size.height, self.containerView.frame.size.width, self.containerView.frame.size.height);
                          self.containerView.center = CGPointMake(self.containerView.center.x, self.containerView.center.y -60);
                          self.signUpLabel.center = CGPointMake(self.signUpLabel.center.x, self.signUpLabel.center.y -150);
                      }
@@ -107,22 +115,123 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onTouchUp:(id)sender {
-    
-    //Alert
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Password" message:@"You did not enter your password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    [alertView show];
 
-    
+
+- (IBAction)onTouchUp:(id)sender {
     //Transition for Feed Screen
     NSLog(@"On touch up inside");
     
-    UIViewController *vc = [[FeedViewController alloc] init];
-    vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
-    [self presentViewController:vc animated:YES completion:nil];
+    // Responde to label text
+    [self.view endEditing:YES];
+    //[self.loginActivityIndicator startAnimating];
+    self.loginButton.enabled = NO;
+    self.emailTextField.enabled = NO;
+    self.passwordTextField.enabled = NO;
+    self.loginButton.alpha=.75;
+    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"logging_in_button"] forState:UIControlStateDisabled];
+    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"logging_in_button"] forState:UIControlStateNormal];
+
+    
+    [UIView
+     animateWithDuration:8
+     delay:5
+     options:UIViewAnimationOptionCurveLinear
+     animations:^{
+     }
+     completion:^(BOOL finished) {       
+         if ([self.passwordTextField.text isEqualToString:@"password"] && [self.emailTextField.text isEqualToString:@"username"])
+             [self loginSucess];
+      else
+             [self loginFail];
+     }];
+
+    
     
 }
+     
+     - (void)loginSucess {
+         
+         [self.loginActivityIndicator startAnimating];
+         
+         // View Controllers
+         FeedViewController *feedVC = [[FeedViewController alloc] init];
+         UINavigationController *feedNC = [[UINavigationController alloc] initWithRootViewController:feedVC];
+         feedNC.tabBarItem.title = @"News Feed";
+         //firstNavigationController.tabBarItem.image = [UIImage imageNamed:@"House"];
+         
+         RequestViewController *requestVC = [[RequestViewController alloc] init];
+         UINavigationController *requestNC = [[UINavigationController alloc] initWithRootViewController:requestVC];
+         requestNC.tabBarItem.title = @"Requests";
+         
+         MessageViewController *messageVC = [[MessageViewController alloc] init];
+         UINavigationController *messageNC = [[UINavigationController alloc] initWithRootViewController:messageVC];
+         messageNC.tabBarItem.title = @"Messages";
+         
+         NotificationViewController *notificationVC = [[NotificationViewController alloc] init];
+         UINavigationController *notificationNC = [[UINavigationController alloc] initWithRootViewController:notificationVC];
+         notificationNC.tabBarItem.title = @"Notifications";
+         
+         MoreViewController *moreVC = [[MoreViewController alloc] init];
+         UINavigationController *moreNC = [[UINavigationController alloc] initWithRootViewController:moreVC];
+         moreNC.tabBarItem.title = @"More";
+         
+         // Configure the tab bar controller as a modal
+         UITabBarController *tabBarController = [[UITabBarController alloc] init];
+         tabBarController.viewControllers = @[feedNC, requestNC, messageNC, notificationNC, moreNC];
+         tabBarController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+         
+         [self presentViewController:tabBarController animated:YES completion:nil];
+         //[self performSelector:@selector(loading) withObject:nil afterDelay:1];
+         
+         
+         //Navigation Bar
+         //feedNC.tabBarItem.title = @"News Feed";
+         //feedNC.tabBarItem.image = [UIImage imageNamed:@"tab_main"];
+         feedNC.navigationBar.barTintColor = [UIColor colorWithRed:(73/255.0) green:(100/255.0) blue:(159/255.0) alpha:1];
+         feedNC.navigationBar.translucent = NO;
+         feedNC.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+         
+         requestNC.navigationBar.barTintColor = [UIColor colorWithRed:(73/255.0) green:(100/255.0) blue:(159/255.0) alpha:1];
+         requestNC.navigationBar.translucent = NO;
+         requestNC.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+         
+         messageNC.navigationBar.barTintColor = [UIColor colorWithRed:(73/255.0) green:(100/255.0) blue:(159/255.0) alpha:1];
+         messageNC.navigationBar.translucent = NO;
+         messageNC.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+         
+         notificationNC.navigationBar.barTintColor = [UIColor colorWithRed:(73/255.0) green:(100/255.0) blue:(159/255.0) alpha:1];
+         notificationNC.navigationBar.translucent = NO;
+         notificationNC.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+         
+         moreNC.navigationBar.barTintColor = [UIColor colorWithRed:(73/255.0) green:(100/255.0) blue:(159/255.0) alpha:1];
+         moreNC.navigationBar.translucent = NO;
+         moreNC.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+         
+         [self.navigationController pushViewController:feedNC animated:YES];
+         
+        
+         
+         
+        
+     }
+
+
+- (void)loginFail {
+    
+    [self.loginActivityIndicator stopAnimating];
+    self.loginButton.enabled = YES;
+    self.emailTextField.enabled = YES;
+    self.passwordTextField.enabled = YES;
+
+
+    //Alert
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Incorrect Password" message:@"Re-enter the correct password." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [alertView show];
+    
+}
+
+
 
 - (IBAction)onTap:(id)sender {
     [self.view endEditing:YES];
@@ -131,6 +240,8 @@
 
 
 - (IBAction)emailEditingEnd:(id)sender {
+
+    
 }
 
 - (IBAction)passwordEditingEnd:(id)sender {
